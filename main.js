@@ -2,13 +2,13 @@ const API_BASE_URL = "https://backend-stayahead.onrender.com";
 
 const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: "top-end",
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
     didOpen: toast => {
-        toast.addEventListener('mouseenter', Swal.stopTimer);
-        toast.addEventListener('mouseleave', Swal.resumeTimer);
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
     }
 });
 
@@ -66,10 +66,10 @@ const translations = {
 
         predict_title: "فحص عميل جديد (تحليل شامل)",
         predict_intro: "من هنا يمكن لشركات SaaS إدخال بيانات عميل جديد أو قائم، للحصول على تحليل احتمالية إلغاء الاشتراك، وتحديد مستوى الخطر، واقتراح الخطوة المناسبة قبل أن يغادر العميل.",
-        predict_section1: "<i class=\"fa-solid fa-user\"></i> 1. المعلومات الشخصية",
-        predict_section2: "<i class=\"fa-solid fa-file-signature\"></i> 2. تفاصيل الاشتراك",
-        predict_section3: "<i class=\"fa-solid fa-box-open\"></i> 3. الخدمات الإضافية",
-        predict_section4: "<i class=\"fa-solid fa-money-check-dollar\"></i> 4. الفوترة والدفع",
+        predict_section1: '<i class="fa-solid fa-user"></i> 1. المعلومات الشخصية',
+        predict_section2: '<i class="fa-solid fa-file-signature"></i> 2. تفاصيل الاشتراك',
+        predict_section3: '<i class="fa-solid fa-box-open"></i> 3. الخدمات الإضافية',
+        predict_section4: '<i class="fa-solid fa-money-check-dollar"></i> 4. الفوترة والدفع',
 
         label_gender: "الجنس",
         label_senior: "كبار السن؟",
@@ -106,7 +106,7 @@ const translations = {
         option_payment_mail: "شيك بريدي",
 
         predict_button: "تحليل البيانات الكاملة",
-        result_title: "<i class=\"fa-solid fa-magnifying-glass-chart\"></i> نتيجة التحليل",
+        result_title: '<i class="fa-solid fa-magnifying-glass-chart"></i> نتيجة التحليل',
         result_hint: "هذه النتيجة موجهة لدعم قرارات فرق المبيعات وخدمة العملاء في شركات SaaS، ولا تُعد قرارًا نهائيًا بحد ذاتها.",
         result_prob_label: "احتمالية المغادرة:",
 
@@ -123,7 +123,36 @@ const translations = {
         member5_role: "ML Engineer",
         member5_bio: "تساهم في تصميم الـ features وتحسين أداء النموذج بما يضمن قراءة أدق لسلوك المستخدمين في منصات الاشتراك.",
         member6_role: "ML Engineer",
-        member6_bio: "تركز على تجربة التدريب، ضبط المعاملات، واختبار النماذج في سيناريوهات واقعية لشركات SaaS."
+        member6_bio: "تركز على تجربة التدريب، ضبط المعاملات، واختبار النماذج في سيناريوهات واقعية لشركات SaaS.",
+
+        predict_loading_btn: "جاري التحليل...",
+        result_high_text: "مرتفعة جداً (High Risk)",
+        result_medium_text: "متوسطة (Medium Risk)",
+        result_low_text: "منخفضة (Safe Customer)",
+        swal_high_title: "⚠️ تحذير عالي الخطورة!",
+        swal_high_text: "الذكاء الاصطناعي يتوقع مغادرة هذا العميل بنسبة كبيرة!",
+        swal_high_confirm: "فهمت، اعرض التفاصيل",
+        toast_safe_title: "العميل في وضع آمن ومستقر",
+        error_title: "فشل الاتصال!",
+        error_text: "تأكد أن السيرفر يعمل في الخلفية",
+
+        risk_label_high: "High",
+        risk_label_medium: "Medium",
+        risk_label_low: "Low",
+        dash_action_high: "📞 اتصل فوراً + خصم",
+        dash_action_medium: "📧 إيميل متابعة",
+        dash_action_low: "✨ اقتراح ترقية",
+
+        action_confirm_high_title: "تأكيد الاتصال الطارئ",
+        action_confirm_high_text: id => `هل أنت متأكد من إرسال تنبيه لفريق المبيعات للعميل ${id}؟`,
+        action_confirm_medium_title: "إرسال بريد إلكتروني",
+        action_confirm_medium_text: id => `سيتم إرسال استبيان رضا العملاء للعميل ${id}`,
+        action_confirm_low_title: "إرسال عرض ترويجي",
+        action_confirm_low_text: id => `سيتم إرسال كود خصم للترقية للعميل ${id}`,
+        action_confirm_yes: "نعم، نفذ الإجراء",
+        action_confirm_cancel: "إلغاء",
+        action_done_title: "تم التنفيذ!",
+        action_done_text: "تم تسجيل الإجراء في النظام بنجاح."
     },
     en: {
         lang_btn: "عربي",
@@ -178,10 +207,10 @@ const translations = {
 
         predict_title: "New customer assessment (Full analysis)",
         predict_intro: "Here SaaS companies can simulate a new or existing customer to estimate churn risk, understand the risk level, and decide on the best action before churn happens.",
-        predict_section1: "<i class=\"fa-solid fa-user\"></i> 1. Personal information",
-        predict_section2: "<i class=\"fa-solid fa-file-signature\"></i> 2. Subscription details",
-        predict_section3: "<i class=\"fa-solid fa-box-open\"></i> 3. Add-on services",
-        predict_section4: "<i class=\"fa-solid fa-money-check-dollar\"></i> 4. Billing & payments",
+        predict_section1: '<i class="fa-solid fa-user"></i> 1. Personal information',
+        predict_section2: '<i class="fa-solid fa-file-signature"></i> 2. Subscription details',
+        predict_section3: '<i class="fa-solid fa-box-open"></i> 3. Add-on services',
+        predict_section4: '<i class="fa-solid fa-money-check-dollar"></i> 4. Billing & payments',
 
         label_gender: "Gender",
         label_senior: "Senior citizen?",
@@ -218,7 +247,7 @@ const translations = {
         option_payment_mail: "Mailed check",
 
         predict_button: "Run full analysis",
-        result_title: "<i class=\"fa-solid fa-magnifying-glass-chart\"></i> Analysis result",
+        result_title: '<i class="fa-solid fa-magnifying-glass-chart"></i> Analysis result',
         result_hint: "This output is designed to support sales and success teams in SaaS companies. It should guide, not replace, human decisions.",
         result_prob_label: "Churn probability:",
 
@@ -235,26 +264,64 @@ const translations = {
         member5_role: "ML Engineer",
         member5_bio: "Designs features and improves model performance to better capture real usage patterns in subscription platforms.",
         member6_role: "ML Engineer",
-        member6_bio: "Focuses on training workflows, hyper-parameter tuning, and realistic evaluation for SaaS scenarios."
+        member6_bio: "Focuses on training workflows, hyper-parameter tuning, and realistic evaluation for SaaS scenarios.",
+
+        predict_loading_btn: "Analyzing...",
+        result_high_text: "Very High (High Risk)",
+        result_medium_text: "Medium (Medium Risk)",
+        result_low_text: "Low (Safe Customer)",
+        swal_high_title: "⚠️ High risk alert!",
+        swal_high_text: "The AI model predicts a very high churn probability for this customer.",
+        swal_high_confirm: "Got it, show details",
+        toast_safe_title: "Customer is in a safe and stable state",
+        error_title: "Connection failed!",
+        error_text: "Please make sure the backend server is running.",
+
+        risk_label_high: "High",
+        risk_label_medium: "Medium",
+        risk_label_low: "Low",
+        dash_action_high: "📞 Immediate call + discount",
+        dash_action_medium: "📧 Follow-up email",
+        dash_action_low: "✨ Upsell / upgrade offer",
+
+        action_confirm_high_title: "Confirm urgent contact",
+        action_confirm_high_text: id => `Are you sure you want to trigger a sales alert for customer ${id}?`,
+        action_confirm_medium_title: "Send email",
+        action_confirm_medium_text: id => `A satisfaction survey email will be sent to customer ${id}.`,
+        action_confirm_low_title: "Send promotion",
+        action_confirm_low_text: id => `A discount/upgrade code will be sent to customer ${id}.`,
+        action_confirm_yes: "Yes, proceed",
+        action_confirm_cancel: "Cancel",
+        action_done_title: "Done!",
+        action_done_text: "The action has been recorded successfully."
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('lang') || 'ar';
-    const savedTheme = localStorage.getItem('theme') || 'light';
+let currentLang = localStorage.getItem("lang") || "ar";
+
+function t(key, ...args) {
+    const dict = translations[currentLang] || translations.ar;
+    const value = dict[key];
+    if (typeof value === "function") return value(...args);
+    return value || key;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("lang") || "ar";
+    const savedTheme = localStorage.getItem("theme") || "light";
     applyLanguage(savedLang);
     applyTheme(savedTheme);
 
-    const themeBtn = document.getElementById('theme-toggle');
-    const langBtn = document.getElementById('lang-toggle');
-    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-    if (langBtn) langBtn.addEventListener('click', toggleLanguage);
+    const themeBtn = document.getElementById("theme-toggle");
+    const langBtn = document.getElementById("lang-toggle");
+    if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+    if (langBtn) langBtn.addEventListener("click", toggleLanguage);
 
-    if (document.getElementById('users-table-body')) fetchHighRiskUsers();
-    
-    const pForm = document.getElementById('predict-form');
+    if (document.getElementById("users-table-body")) fetchHighRiskUsers();
+
+    const pForm = document.getElementById("predict-form");
     if (pForm) {
-        pForm.addEventListener('submit', event => {
+        pForm.addEventListener("submit", event => {
             event.preventDefault();
             handlePredict(event);
         });
@@ -262,49 +329,50 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleTheme() {
-    const isDark = document.body.classList.contains('dark-mode');
-    applyTheme(isDark ? 'light' : 'dark');
+    const isDark = document.body.classList.contains("dark-mode");
+    applyTheme(isDark ? "light" : "dark");
 }
 
 function applyTheme(theme) {
-    if (theme === 'dark') {
-        document.body.classList.add('dark-mode');
+    if (theme === "dark") {
+        document.body.classList.add("dark-mode");
     } else {
-        document.body.classList.remove('dark-mode');
+        document.body.classList.remove("dark-mode");
     }
-    localStorage.setItem('theme', theme);
-    const icon = document.querySelector('#theme-toggle i');
+    localStorage.setItem("theme", theme);
+    const icon = document.querySelector("#theme-toggle i");
     if (icon) {
-        icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        icon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
     }
 }
 
 function toggleLanguage() {
-    const current = localStorage.getItem('lang') || 'ar';
-    const next = current === 'ar' ? 'en' : 'ar';
+    const current = localStorage.getItem("lang") || "ar";
+    const next = current === "ar" ? "en" : "ar";
     applyLanguage(next);
 }
 
 function applyLanguage(lang) {
+    currentLang = lang;
     const dict = translations[lang] || translations.ar;
-    localStorage.setItem('lang', lang);
+    localStorage.setItem("lang", lang);
 
     document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.body.classList.toggle('lang-en', lang === 'en');
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    document.body.classList.toggle("lang-en", lang === "en");
 
-    const langBtn = document.getElementById('lang-toggle');
+    const langBtn = document.getElementById("lang-toggle");
     if (langBtn && dict.lang_btn) {
         langBtn.textContent = dict.lang_btn;
     }
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
         const val = dict[key];
         if (!val) return;
         const tag = el.tagName.toLowerCase();
-        if (tag === 'input' || tag === 'textarea') {
-            el.setAttribute('placeholder', val);
+        if (tag === "input" || tag === "textarea") {
+            el.setAttribute("placeholder", val);
         } else {
             el.innerHTML = val;
         }
@@ -314,94 +382,92 @@ function applyLanguage(lang) {
 async function handlePredict(e) {
     const form = e.target;
     const formData = new FormData(form);
-    const btn = form.querySelector('button');
+    const btn = form.querySelector("button");
     const originalText = btn.innerHTML;
 
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري التحليل...';
+    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> ${t("predict_loading_btn")}`;
     btn.disabled = true;
 
     const payload = {
         customer_id: "WEB_USER_" + Math.floor(Math.random() * 10000),
-        gender: formData.get('gender'),
-        is_senior_user: formData.get('senior'),
-        has_partner: formData.get('partner'),
-        has_dependents: formData.get('dependents'),
-        subscription_tenure_months: parseInt(formData.get('tenure')),
-        ProductEnabled: formData.get('phoneService'),
-        PlanType: formData.get('planType'),
-        billing_cycle_type: formData.get('contract'),
-        OnlineSecurity: formData.get('onlineSecurity'),
-        OnlineBackup: formData.get('onlineBackup'),
-        DeviceProtection: formData.get('deviceProtection'),
-        TechSupport: formData.get('techSupport'),
-        FeatureA: formData.get('featureA'),
-        FeatureB: formData.get('featureB'),
-        PaperlessBilling: formData.get('paperless'),
-        PaymentMethod: formData.get('paymentMethod'),
-        MonthlyCharges: parseFloat(formData.get('monthlyCharges')),
-        TotalCharges: parseFloat(formData.get('totalCharges'))
+        gender: formData.get("gender"),
+        is_senior_user: formData.get("senior"),
+        has_partner: formData.get("partner"),
+        has_dependents: formData.get("dependents"),
+        subscription_tenure_months: parseInt(formData.get("tenure")),
+        ProductEnabled: formData.get("phoneService"),
+        PlanType: formData.get("planType"),
+        billing_cycle_type: formData.get("contract"),
+        OnlineSecurity: formData.get("onlineSecurity"),
+        OnlineBackup: formData.get("onlineBackup"),
+        DeviceProtection: formData.get("deviceProtection"),
+        TechSupport: formData.get("techSupport"),
+        FeatureA: formData.get("featureA"),
+        FeatureB: formData.get("featureB"),
+        PaperlessBilling: formData.get("paperless"),
+        PaymentMethod: formData.get("paymentMethod"),
+        MonthlyCharges: parseFloat(formData.get("monthlyCharges")),
+        TotalCharges: parseFloat(formData.get("totalCharges"))
     };
 
     try {
         const response = await fetch(`${API_BASE_URL}/predict`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload)
         });
 
         if (!response.ok) throw new Error("Connection Error");
         const result = await response.json();
-        
-        const resultBox = document.getElementById('prediction-result');
-        const probValue = document.getElementById('prob-value');
-        const riskBadge = document.getElementById('risk-badge');
 
-        resultBox.classList.remove('hidden');
+        const resultBox = document.getElementById("prediction-result");
+        const probValue = document.getElementById("prob-value");
+        const riskBadge = document.getElementById("risk-badge");
+
+        resultBox.classList.remove("hidden");
         riskBadge.innerText = result.ai_decision;
 
-        if (result.ai_decision === 'High') {
-            probValue.innerText = "مرتفعة جداً (High Risk)";
+        if (result.ai_decision === "High") {
+            probValue.innerText = t("result_high_text");
             probValue.style.color = "#e74c3c";
             riskBadge.style.background = "#ffebee";
             riskBadge.style.color = "#c62828";
-            
-            Swal.fire({
-                title: '⚠️ تحذير عالي الخطورة!',
-                text: 'الذكاء الاصطناعي يتوقع مغادرة هذا العميل بنسبة كبيرة!',
-                icon: 'warning',
-                confirmButtonText: 'فهمت، اعرض التفاصيل',
-                confirmButtonColor: '#e74c3c',
-                background: '#fff',
-                backdrop: 'rgba(231, 76, 60, 0.1)'
-            });
 
-        } else if (result.ai_decision === 'Medium') {
-            probValue.innerText = "متوسطة (Medium Risk)";
+            Swal.fire({
+                title: t("swal_high_title"),
+                text: t("swal_high_text"),
+                icon: "warning",
+                confirmButtonText: t("swal_high_confirm"),
+                confirmButtonColor: "#e74c3c",
+                background: "#fff",
+                backdrop: "rgba(231, 76, 60, 0.1)"
+            });
+        } else if (result.ai_decision === "Medium") {
+            probValue.innerText = t("result_medium_text");
             probValue.style.color = "#f39c12";
             riskBadge.style.background = "#fff3e0";
             riskBadge.style.color = "#ef6c00";
         } else {
-            probValue.innerText = "منخفضة (Safe Customer)";
+            probValue.innerText = t("result_low_text");
             probValue.style.color = "#2ecc71";
             riskBadge.style.background = "#e8f5e9";
             riskBadge.style.color = "#2e7d32";
-            
+
             Toast.fire({
-                icon: 'success',
-                title: 'العميل في وضع آمن ومستقر'
+                icon: "success",
+                title: t("toast_safe_title")
             });
         }
-        
-        resultBox.scrollIntoView({ behavior: 'smooth' });
 
+        resultBox.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
         console.error(error);
         Swal.fire({
-            icon: 'error',
-            title: 'فشل الاتصال!',
-            text: 'تأكد أن السيرفر (main.py) يعمل في الخلفية',
-            confirmButtonText: 'حسناً',
-            confirmButtonColor: '#333'
+            icon: "error",
+            title: t("error_title"),
+            text: t("error_text"),
+            confirmButtonText: "OK",
+            confirmButtonColor: "#333"
         });
     } finally {
         btn.innerHTML = originalText;
@@ -410,56 +476,55 @@ async function handlePredict(e) {
 }
 
 async function fetchHighRiskUsers() {
-    const spinner = document.getElementById('loading-spinner');
+    const spinner = document.getElementById("loading-spinner");
     try {
         const res = await fetch(`${API_BASE_URL}/high-risk-users`);
         if (!res.ok) throw new Error("Failed");
-        
+
         const users = await res.json();
-        const tbody = document.getElementById('users-table-body');
-        
-        if (spinner) spinner.style.display = 'none';
-        tbody.innerHTML = '';
+        const tbody = document.getElementById("users-table-body");
+
+        if (spinner) spinner.style.display = "none";
+        tbody.innerHTML = "";
 
         if (users.length === 0) {
-            const dict = translations[localStorage.getItem('lang') || 'ar'];
-            const txt = dict.dashboard_nodata || 'لا يوجد بيانات لعرضها حالياً';
+            const txt = t("dashboard_nodata");
             tbody.innerHTML = `<tr><td colspan="8" style="text-align:center">${txt}</td></tr>`;
             return;
         }
 
         users.forEach(user => {
-            let riskBadge = '';
-            let actionSuggestion = '';
-            let btnClass = '';
+            let riskBadge = "";
+            let actionSuggestion = "";
+            let btnClass = "";
 
-            if (user.risk_category === 'High') {
-                riskBadge = '<span style="background:#ffebee; color:#c62828; padding:5px 12px; border-radius:15px; font-weight:bold">High</span>';
-                actionSuggestion = 'Call Immediately + Discount';
-                btnClass = 'background:#e74c3c;';
-            } else if (user.risk_category === 'Medium') {
-                riskBadge = '<span style="background:#fff3e0; color:#ef6c00; padding:5px 12px; border-radius:15px; font-weight:bold">Medium</span>';
-                actionSuggestion = 'Follow-up Email';
-                btnClass = 'background:#f39c12;';
+            if (user.risk_category === "High") {
+                riskBadge = `<span style="background:#ffebee; color:#c62828; padding:5px 12px; border-radius:15px; font-weight:bold">${t("risk_label_high")}</span>`;
+                actionSuggestion = t("dash_action_high");
+                btnClass = "background:#e74c3c;";
+            } else if (user.risk_category === "Medium") {
+                riskBadge = `<span style="background:#fff3e0; color:#ef6c00; padding:5px 12px; border-radius:15px; font-weight:bold">${t("risk_label_medium")}</span>`;
+                actionSuggestion = t("dash_action_medium");
+                btnClass = "background:#f39c12;";
             } else {
-                riskBadge = '<span style="background:#e8f5e9; color:#2e7d32; padding:5px 12px; border-radius:15px; font-weight:bold">Low</span>';
-                actionSuggestion = 'Upgrade Recommendation for the Client';
-                btnClass = 'background:#2ecc71;';
+                riskBadge = `<span style="background:#e8f5e9; color:#2e7d32; padding:5px 12px; border-radius:15px; font-weight:bold">${t("risk_label_low")}</span>`;
+                actionSuggestion = t("dash_action_low");
+                btnClass = "background:#2ecc71;";
             }
 
             tbody.innerHTML += `
                 <tr style="transition: 0.2s; border-bottom: 1px solid #eee;">
                     <td style="font-weight:bold; color:#555">${user.customer_id}</td>
-                    <td>${user.tenure || '-'} شهر</td>
-                    <td>${user.contract || '-'}</td>
-                    <td>${user.payment_method || '-'}</td>
+                    <td>${user.tenure || "-"} شهر</td>
+                    <td>${user.contract || "-"}</td>
+                    <td>${user.payment_method || "-"}</td>
                     <td>${(user.churn_probability * 100).toFixed(1)}%</td>
                     <td>${riskBadge}</td>
                     <td style="font-size:0.9rem; color:#444;">${actionSuggestion}</td>
                     <td>
                         <button onclick="takeAction('${user.customer_id}', '${user.risk_category}')" 
                                 style="${btnClass} color:white; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            send
+                            ${currentLang === "ar" ? "تنفيذ" : "Execute"}
                         </button>
                     </td>
                 </tr>`;
@@ -467,54 +532,47 @@ async function fetchHighRiskUsers() {
     } catch (e) {
         console.error(e);
         if (spinner) {
-            const dict = translations[localStorage.getItem('lang') || 'ar'];
-            spinner.innerHTML = dict.dashboard_server_off || 'تأكد من تشغيل السيرفر';
+            spinner.innerHTML = t("dashboard_server_off");
         }
     }
 }
 
 function takeAction(id, risk) {
-    let title = '';
-    let text = '';
-    let confirmBtnColor = '';
+    let title = "";
+    let text = "";
+    let confirmBtnColor = "";
 
-    if (risk === 'High') {
-        title = 'تأكيد الاتصال الطارئ';
-        text = `هل أنت متأكد من إرسال تنبيه لفريق المبيعات للعميل ${id}؟`;
-        confirmBtnColor = '#e74c3c';
-    } else if (risk === 'Medium') {
-        title = 'Email Sending';
-        text = `A customer satisfaction survey will be sent to the client ${id}.`;
-        confirmBtnColor = '#f39c12';
+    if (risk === "High") {
+        title = t("action_confirm_high_title");
+        text = t("action_confirm_high_text", id);
+        confirmBtnColor = "#e74c3c";
+    } else if (risk === "Medium") {
+        title = t("action_confirm_medium_title");
+        text = t("action_confirm_medium_text", id);
+        confirmBtnColor = "#f39c12";
     } else {
-        title = 'إرسال عرض ترويجي';
-        text = `سيتم إرسال كود خصم للترقية للعميل ${id}`;
-        confirmBtnColor = '#2ecc71';
+        title = t("action_confirm_low_title");
+        text = t("action_confirm_low_text", id);
+        confirmBtnColor = "#2ecc71";
     }
 
     Swal.fire({
         title,
         text,
-        icon: 'question',
+        icon: "question",
         showCancelButton: true,
         confirmButtonColor: confirmBtnColor,
-        cancelButtonColor: '#aaa',
-        confirmButtonText: 'نعم، نفذ الإجراء',
-        cancelButtonText: 'إلغاء',
+        cancelButtonColor: "#aaa",
+        confirmButtonText: t("action_confirm_yes"),
+        cancelButtonText: t("action_confirm_cancel"),
         reverseButtons: true
     }).then(result => {
         if (result.isConfirmed) {
             Swal.fire(
-                'تم التنفيذ!',
-                'تم تسجيل الإجراء في النظام بنجاح.',
-                'success'
+                t("action_done_title"),
+                t("action_done_text"),
+                "success"
             );
         }
     });
 }
-
-
-
-
-
-
