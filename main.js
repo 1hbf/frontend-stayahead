@@ -112,7 +112,7 @@ const translations = {
 
         team_title: "فريق العمل",
         team_subtitle: "وراء Stay Ahead فريق متكامل يجمع بين تطوير الواجهات، والذكاء الاصطناعي، وتحليل البيانات، لبناء حلول تخدم شركات الاشتراكات الرقمية.",
-        member1_role: "Frontend Developer & Product Lead",
+        member1_role: "Frontend Developer",
         member1_bio: "مسؤول عن تجربة المستخدم، بناء الواجهات الأمامية، وربط المنصة مع نماذج التنبؤ لتقديم تجربة سلسلة لشركات SaaS.",
         member2_role: "Backend & Integration",
         member2_bio: "مسؤول عن تصميم الـ APIs، إدارة الاتصال بقواعد البيانات، وضمان تكامل نموذج الذكاء الاصطناعي مع النظام التشغيلي.",
@@ -512,4 +512,5 @@ function takeAction(id, risk) {
         }
     });
 }
+
 
