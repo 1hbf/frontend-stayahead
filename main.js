@@ -224,7 +224,7 @@ const translations = {
 
         team_title: "Our team",
         team_subtitle: "Behind Stay Ahead is a cross-functional team combining frontend, AI, and data analytics to build solutions for subscription-based businesses.",
-        member1_role: "Frontend Developer & Product Lead",
+        member1_role: "Frontend Developer",
         member1_bio: "Leads the user experience, frontend implementation, and the integration between the web app and the churn prediction models for SaaS clients.",
         member2_role: "Backend & Integration",
         member2_bio: "Owns the API layer, database connectivity, and robust integration between the AI model and the production stack.",
@@ -512,5 +512,6 @@ function takeAction(id, risk) {
         }
     });
 }
+
 
 
