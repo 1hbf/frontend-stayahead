@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = "https://backend-stayahead.onrender.com";
 
 const Toast = Swal.mixin({
     toast: true,
@@ -512,3 +512,4 @@ function takeAction(id, risk) {
         }
     });
 }
+
