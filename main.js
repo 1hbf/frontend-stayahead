@@ -435,15 +435,15 @@ async function fetchHighRiskUsers() {
 
             if (user.risk_category === 'High') {
                 riskBadge = '<span style="background:#ffebee; color:#c62828; padding:5px 12px; border-radius:15px; font-weight:bold">High</span>';
-                actionSuggestion = '📞 اتصل فوراً + خصم';
+                actionSuggestion = 'Call Immediately + Discount';
                 btnClass = 'background:#e74c3c;';
             } else if (user.risk_category === 'Medium') {
                 riskBadge = '<span style="background:#fff3e0; color:#ef6c00; padding:5px 12px; border-radius:15px; font-weight:bold">Medium</span>';
-                actionSuggestion = '📧 إيميل متابعة';
+                actionSuggestion = 'Follow-up Email';
                 btnClass = 'background:#f39c12;';
             } else {
                 riskBadge = '<span style="background:#e8f5e9; color:#2e7d32; padding:5px 12px; border-radius:15px; font-weight:bold">Low</span>';
-                actionSuggestion = '✨ اقتراح ترقية';
+                actionSuggestion = 'Upgrade Recommendation for the Client';
                 btnClass = 'background:#2ecc71;';
             }
 
@@ -512,6 +512,7 @@ function takeAction(id, risk) {
         }
     });
 }
+
 
 
 
