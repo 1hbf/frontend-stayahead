@@ -483,8 +483,8 @@ function takeAction(id, risk) {
         text = `هل أنت متأكد من إرسال تنبيه لفريق المبيعات للعميل ${id}؟`;
         confirmBtnColor = '#e74c3c';
     } else if (risk === 'Medium') {
-        title = 'إرسال بريد إلكتروني';
-        text = `سيتم إرسال استبيان رضا العملاء للعميل ${id}`;
+        title = 'Email Sending';
+        text = `A customer satisfaction survey will be sent to the client ${id}.`;
         confirmBtnColor = '#f39c12';
     } else {
         title = 'إرسال عرض ترويجي';
@@ -512,6 +512,7 @@ function takeAction(id, risk) {
         }
     });
 }
+
 
 
 
