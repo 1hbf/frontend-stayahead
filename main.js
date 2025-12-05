@@ -459,7 +459,7 @@ async function fetchHighRiskUsers() {
                     <td>
                         <button onclick="takeAction('${user.customer_id}', '${user.risk_category}')" 
                                 style="${btnClass} color:white; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:bold; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                            تنفيذ
+                            send
                         </button>
                     </td>
                 </tr>`;
@@ -512,6 +512,7 @@ function takeAction(id, risk) {
         }
     });
 }
+
 
 
 
